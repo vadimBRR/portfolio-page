@@ -22,16 +22,18 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --foreground: #e5e5e5;
 
-    --color-primary: #f20574;
-    --color-primary-hover: #ff469b;
-    --color-accent: #f46d91;
+    --color-primary: #7B3FE4;            /* 🌌 Фіолетовий */
+    --color-primary-hover: #A560F5;      /* 🔮 Hover */
+    --color-accent: #FF61C7;             /* 💗 Додатковий акцент */
     --color-input: #141414;
-    --color-border: rgba(243, 244, 246, 0.1);
+    --color-border: rgba(255, 255, 255, 0.08);
     --color-task-card: #1a1a1a;
   }
 }
+
+
 
 @layer utilities {
   .bg-background {
