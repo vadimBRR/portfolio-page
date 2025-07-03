@@ -3,6 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  --color-primary: #f20574;             /* Акцент (рожево-малиновий) */
+  --color-primary-hover: #ff469b;       /* Hover-ефект */
+  --color-accent: #f46d91;              /* Додатковий акцент */
+  --color-input: #f1f1f1;               /* Світлий input фон */
+  --color-task-card: #f9f9f9;
+  --color-border: rgba(243, 244, 246, 0.1);
 }
 
 @theme inline {
@@ -16,6 +23,51 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    --color-primary: #f20574;
+    --color-primary-hover: #ff469b;
+    --color-accent: #f46d91;
+    --color-input: #141414;
+    --color-border: rgba(243, 244, 246, 0.1);
+    --color-task-card: #1a1a1a;
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .bg-task-card {
+    background-color: var(--color-task-card);
+  }
+
+  .bg-input {
+    background-color: var(--color-input);
+  }
+
+  .bg-primary {
+    background-color: var(--color-primary);
+  }
+
+  .bg-primary-hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  .text-foreground {
+    color: var(--foreground);
+  }
+
+  .text-primary {
+    color: var(--color-primary);
+  }
+
+  .text-accent {
+    color: var(--color-accent);
+  }
+
+  .custom-border {
+    border-color: var(--color-border);
   }
 }
 
