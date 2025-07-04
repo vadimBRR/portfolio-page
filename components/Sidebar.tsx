@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from 'react'
 import { motion, spring } from 'framer-motion'
 import { Home, User, FolderGit2, Mail, Code } from 'lucide-react'
 
-const Sidebar = () => {
+type Props = {
+	scrollContainerRef: React.RefObject<HTMLDivElement | null>
+}
+const Sidebar = ({ scrollContainerRef }: Props) => {
 	const refs = useRef<(HTMLDivElement | null)[]>([])
 
 	const links = [
@@ -18,8 +21,13 @@ const Sidebar = () => {
 	const [activeIndex, setActiveIndex] = useState(0)
 	const [liquidX, setLiquidX] = useState(0)
 
+	const activeIndexRef = useRef(activeIndex)
+	const isManuallyScroll = useRef(false)
+
 	const handleClick = (id: number, name: string) => {
 		setActiveIndex(id)
+		isManuallyScroll.current = true
+
 		document
 			.getElementById(name.toLowerCase())
 			?.scrollIntoView({ behavior: 'smooth' })
@@ -29,10 +37,63 @@ const Sidebar = () => {
 			const rect = el.getBoundingClientRect()
 			setLiquidX(rect.left + rect.width / 2 - 24)
 		}
+
+		const scrollEl = scrollContainerRef.current
+		if (scrollEl) {
+			const onScrollEnd = () => {
+				isManuallyScroll.current = false
+				scrollEl.removeEventListener('scrollend', onScrollEnd as any)
+			}
+			scrollEl.addEventListener('scrollend', onScrollEnd as any)
+
+			// if event doesnt work well:
+			setTimeout(() => {
+				isManuallyScroll.current = false
+			}, 800)
+		}
 	}
 
 	useEffect(() => {
+		const scrollEl = scrollContainerRef.current
+		if (!scrollEl) return
 
+		const handleScroll = () => {
+			if (isManuallyScroll.current) return
+
+			const containerRect = scrollEl.getBoundingClientRect()
+
+			for (let i = 0; i < links.length; i++) {
+				const section = document.getElementById(links[i].name.toLowerCase())
+        if(!section) continue;
+
+				const rect = section.getBoundingClientRect()
+				const triggerPoint = containerRect.top + containerRect.height * 0.3
+
+				const isVisible = rect.top <= triggerPoint && rect.bottom > triggerPoint
+
+				if (isVisible) {
+					if (i !== activeIndexRef.current) {
+						setActiveIndex(i)
+						const el = refs.current[i]
+						if (el) {
+							const elRect = el.getBoundingClientRect()
+							setLiquidX(elRect.left + elRect.width / 2 - 24)
+						}
+					}
+					break
+				}
+			}
+		}
+
+		scrollEl.addEventListener('scroll', handleScroll, {passive: true})
+		return () => scrollEl.removeEventListener('scroll', handleScroll)
+	}, [])
+
+	useEffect(() => {
+		activeIndexRef.current = activeIndex
+	}, [activeIndex])
+
+	useEffect(() => {
 		const el = refs.current[0]
 		if (el) {
 			const rect = el.getBoundingClientRect()
