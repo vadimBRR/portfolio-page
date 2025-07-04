@@ -8,13 +8,22 @@ const Hero = () => {
 			{/* Text */}
 			<div className='flex-1 max-w-xl'>
 				<motion.h1
-					className='text-4xl sm:text-6xl font-bold text-foreground text-center lg:text-left'
+					className='text-4xl sm:text-6xl font-bold text-foreground text-center lg:text-left relative group'
 					initial={{ opacity: 0, y: 30 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 				>
-					Vadym Brovych
+					<span
+						onClick={() => alert("🥚 You found 1/5 easter eggs")}
+						className='cursor-pointer hover:underline'
+					>
+						Vadym Brovych
+					</span>
+					<span className='absolute -top-6 left-1/2 -translate-x-1/2 text-sm text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity'>
+						hovered 👀
+					</span>
 				</motion.h1>
+
 				<motion.h2
 					className='text-xl sm:text-2xl text-primary font-semibold mt-2 lg:mt-4 text-center lg:text-left'
 					initial={{ opacity: 0, y: 20 }}
