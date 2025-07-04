@@ -1,10 +1,12 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { motion, spring } from 'framer-motion'
 import { Home, User, FolderGit2, Mail, Code } from 'lucide-react'
 
 const Sidebar = () => {
+	const refs = useRef<(HTMLDivElement | null)[]>([])
+
 	const links = [
 		{ id: 0, name: 'Home', icon: Home },
 		{ id: 1, name: 'About', icon: User },
@@ -14,42 +16,114 @@ const Sidebar = () => {
 	]
 
 	const [activeIndex, setActiveIndex] = useState(0)
+	const [liquidX, setLiquidX] = useState(0)
 
-  const handleClick = (id:number, name:string) => {
-    setActiveIndex(id);
-    document.getElementById(name.toLowerCase())?.scrollIntoView({behavior: 'smooth'})
-  }
+	const handleClick = (id: number, name: string) => {
+		setActiveIndex(id)
+		document
+			.getElementById(name.toLowerCase())
+			?.scrollIntoView({ behavior: 'smooth' })
+
+		const el = refs.current[id]
+		if (el) {
+			const rect = el.getBoundingClientRect()
+			setLiquidX(rect.left + rect.width / 2 - 24)
+		}
+	}
+
+	useEffect(() => {
+
+		const el = refs.current[0]
+		if (el) {
+			const rect = el.getBoundingClientRect()
+			setLiquidX(rect.left + rect.width / 2 - 24)
+		}
+	}, [])
 
 	return (
-		<div className='min-h-screen bg-background w-24 border-r custom-border flex flex-col items-center gap-8 pt-5'>
-			{/* Logo */}
-			<div className='bg-primary size-10 rounded-full text-white text-xl flex items-center justify-center font-bold'>
-				V
+		<>
+			<div className='min-h-screen bg-background w-24 border-r custom-border flex-col items-center gap-8 pt-5 md:flex hidden'>
+				{/* Logo */}
+				<div className='bg-primary size-10 rounded-full text-white text-xl flex items-center justify-center font-bold'>
+					V
+				</div>
+
+				{/* Nav */}
+				<nav className='relative flex flex-col items-center gap-10 mt-10'>
+					{/* Liquid */}
+					<motion.div
+						layoutId='liquid-nav'
+						className='absolute w-12 h-12 z-0'
+						initial={false}
+						animate={{ top: `${activeIndex * 88}px` }}
+						transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+					>
+						<motion.div
+							key={activeIndex}
+							className='w-full h-full rounded-2xl bg-gradient-to-tr from-[#4C3575] to-[#724F96] shadow-[0_0_10px_#4C357588] ring-1 ring-white/5 backdrop-blur-sm origin-center'
+							initial={false}
+							animate={{
+								scaleY: [1, 1.3, 1],
+								borderRadius: ['0.75rem', '1.5rem', '0.75rem'],
+							}}
+							transition={{ duration: 0.4, ease: 'easeInOut' }}
+						></motion.div>
+					</motion.div>
+
+					{/* Icons */}
+					{links.map((link, i) => {
+						const Icon = link.icon
+						const isActive = link.id === activeIndex
+
+						return (
+							<div
+								key={link.id}
+								className='group w-12 h-12 z-10 flex flex-col items-center justify-center cursor-pointer'
+								onClick={() => handleClick(link.id, link.name)}
+							>
+								<Icon
+									size={20}
+									className={`transition-colors duration-300  drop-shadow-[0_0_6px_var(--color-primary)] ${
+										isActive
+											? 'text-white '
+											: 'text-foreground/50 group-hover:text-foreground'
+									}`}
+								/>
+
+								<span
+									className={`text-xs mt-1 font-medium transition-colors duration-300 ${
+										isActive
+											? ''
+											: 'text-foreground/50 group-hover:text-foreground'
+									}`}
+								>
+									{link.name}
+								</span>
+							</div>
+						)
+					})}
+				</nav>
 			</div>
 
-			{/* Nav */}
-			<nav className='relative flex flex-col items-center gap-10 mt-10'>
-				{/* Liquid */}
+			{/* Mobile */}
+			<div className='fixed bottom-0 inset-x-0 bg-background border-t custom-border flex flex-row justify-around items-center lg:hidden py-2 z-50'>
 				<motion.div
-					layoutId='liquid-nav'
-					className='absolute w-12 h-12 z-0'
+					layoutId='liquid-nav-mobile'
+					className='w-12 h-12 absolute'
+					animate={{ left: liquidX }}
 					initial={false}
-					animate={{ top: `${activeIndex * 88}px` }}
 					transition={{ type: 'spring', stiffness: 300, damping: 25 }}
 				>
 					<motion.div
 						key={activeIndex}
 						className='w-full h-full rounded-2xl bg-gradient-to-tr from-[#4C3575] to-[#724F96] shadow-[0_0_10px_#4C357588] ring-1 ring-white/5 backdrop-blur-sm origin-center'
-						initial={false}
 						animate={{
-							scaleY: [1, 1.3, 1],
+							scaleX: [1, 1.4, 1],
 							borderRadius: ['0.75rem', '1.5rem', '0.75rem'],
 						}}
-						transition={{ duration: 0.4, ease: 'easeInOut' }}
 					></motion.div>
 				</motion.div>
 
-				{/* Icons */}
 				{links.map((link, i) => {
 					const Icon = link.icon
 					const isActive = link.id === activeIndex
@@ -57,22 +131,24 @@ const Sidebar = () => {
 					return (
 						<div
 							key={link.id}
-							className='group w-12 h-12 z-10 flex flex-col items-center justify-center cursor-pointer'
+							ref={el => {
+								refs.current[link.id] = el
+							}}
+							className='group flex flex-col items-center cursor-pointer z-10'
 							onClick={() => handleClick(link.id, link.name)}
 						>
 							<Icon
-								size={20}
-								className={`transition-colors duration-300  drop-shadow-[0_0_6px_var(--color-primary)] ${
+								size={22}
+								className={`transition-colors duration-300 ${
 									isActive
-										? 'text-white '
+										? 'text-white'
 										: 'text-foreground/50 group-hover:text-foreground'
 								}`}
 							/>
-
 							<span
-								className={`text-xs mt-1 font-medium transition-colors duration-300 ${
+								className={`transition-colors duration-300 text-[10px] ${
 									isActive
-										? ''
+										? 'text-white'
 										: 'text-foreground/50 group-hover:text-foreground'
 								}`}
 							>
@@ -81,8 +157,8 @@ const Sidebar = () => {
 						</div>
 					)
 				})}
-			</nav>
-		</div>
+			</div>
+		</>
 	)
 }
 

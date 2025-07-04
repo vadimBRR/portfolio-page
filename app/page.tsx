@@ -7,9 +7,8 @@ import Image from 'next/image'
 
 export default function Home() {
 	return (
-		<main className='snap-y snap-mandatory overflow-y-scroll h-screen scroll-smooth bg-gradient-to-br from-[#0a0a0a] to-[#111019]'>
+		<main className='snap-y snap-proximity overflow-y-scroll h-screen scroll-smooth bg-gradient-to-br from-[#0a0a0a] to-[#111019]'>
 			<section id='home' className='h-screen snap-start relative'>
-				  
 				<Hero />
 			</section>
 			<section id='about' className='h-screen snap-start'>
