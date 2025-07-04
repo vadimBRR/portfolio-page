@@ -76,6 +76,16 @@ export function useSidebarNavigation(
 		return () => scrollEl.removeEventListener('scroll', handleScroll)
 	}, [])
 
+  useEffect(()=>{
+    const handleResize = ()=> {
+      updateLiquid(activeIndexRef.current)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize',handleResize)
+    
+  },[])
+
 	useEffect(() => {
     updateLiquid(0)
 	}, [])
