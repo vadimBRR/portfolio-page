@@ -1,21 +1,27 @@
 'use client'
 
 import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { Home, User, FolderGit2, Mail } from 'lucide-react'
+import { motion, spring } from 'framer-motion'
+import { Home, User, FolderGit2, Mail, Code } from 'lucide-react'
 
 const Sidebar = () => {
 	const links = [
 		{ id: 0, name: 'Home', icon: Home },
 		{ id: 1, name: 'About', icon: User },
-		{ id: 2, name: 'Projects', icon: FolderGit2 },
-		{ id: 3, name: 'Contact', icon: Mail },
+		{ id: 2, name: 'Skills', icon: Code },
+		{ id: 3, name: 'Projects', icon: FolderGit2 },
+		{ id: 4, name: 'Contact', icon: Mail },
 	]
 
 	const [activeIndex, setActiveIndex] = useState(0)
 
+  const handleClick = (id:number, name:string) => {
+    setActiveIndex(id);
+    document.getElementById(name.toLowerCase())?.scrollIntoView({behavior: 'smooth'})
+  }
+
 	return (
-		<div className='min-h-screen bg-background w-24 border-r custom-border flex flex-col items-center gap-10'>
+		<div className='min-h-screen bg-background w-24 border-r custom-border flex flex-col items-center gap-8 pt-5'>
 			{/* Logo */}
 			<div className='bg-primary size-10 rounded-full text-white text-xl flex items-center justify-center font-bold'>
 				V
@@ -52,7 +58,7 @@ const Sidebar = () => {
 						<div
 							key={link.id}
 							className='group w-12 h-12 z-10 flex flex-col items-center justify-center cursor-pointer'
-							onClick={() => setActiveIndex(link.id)}
+							onClick={() => handleClick(link.id, link.name)}
 						>
 							<Icon
 								size={20}

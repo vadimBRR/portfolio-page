@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Poppins } from 'next/font/google'
 import './globals.css'
-import Sidebar from '@/components/Sidebar'
+import Navbar from '@/components/Sidebar'
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -23,11 +23,14 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body
-				className={`${poppins.variable} antialiased bg-background text-foreground`}
+				className={`${poppins.className} antialiased bg-background text-foreground`}
 			>
 				<div className='flex flex-row min-h-screen'>
-					<Sidebar />
+					<Navbar />
+          <div className="flex-1 ">
 					{children}
+
+          </div>
 				</div>
 			</body>
 		</html>
