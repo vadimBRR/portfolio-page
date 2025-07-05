@@ -78,7 +78,7 @@ const Hero = () => {
 					</motion.div>
 
 					<motion.div
-						className='flex items-center'
+						className='flex items-center '
 						initial={{ opacity: 0, scale: 0.9 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.4, delay: 0.7 }}
@@ -98,9 +98,9 @@ const Hero = () => {
 
 			{/* Photo */}
 			<motion.div
-				className='flex-1 relative flex h-full items-center lg:items-end z-10'
-				initial={{ opacity: 0, y: 30 }}
-				animate={{ opacity: 1, y: [30, 18, 30] }}
+				className='flex-1 relative flex h-full items-center lg:items-end z-10 '
+				initial={{ opacity: 0, y: 0 }}
+				animate={{ opacity: 1, y: [0, -15, 0] }}
 				transition={{
 					opacity: { duration: 0.6, delay: 0.6 },
 					y: {
