@@ -1,8 +1,11 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Typewriter } from 'react-simple-typewriter'
+import { useActiveSection } from '@/store/useActiveSection'
 
 const Hero = () => {
+	const isActive = useActiveSection(state => state.activeIndex === 0)
+
 	return (
 		<section className='w-full h-full flex flex-col-reverse lg:flex-row justify-center items-center px-6'>
 			{/* Text */}
@@ -30,6 +33,7 @@ const Hero = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
+          {isActive ? (
 					<Typewriter
 						words={[
 							'Full Stack Developer',
@@ -47,6 +51,7 @@ const Hero = () => {
 						deleteSpeed={50}
 						delaySpeed={1500}
 					/>
+          ) : 'Full Stack Developer'}
 				</motion.h2>
 				<motion.p
 					className='text-foreground/70 text-sm sm:text-base mt-3 lg:mt-6 text-center lg:text-left'
@@ -100,12 +105,12 @@ const Hero = () => {
 			<motion.div
 				className='flex-1 relative flex h-full items-center lg:items-end z-10 '
 				initial={{ opacity: 0, y: 0 }}
-				animate={{ opacity: 1, y: [0, -15, 0] }}
+				animate={{ opacity: 1, y: [0, isActive ? -15 : 0, 0] }}
 				transition={{
 					opacity: { duration: 0.6, delay: 0.6 },
 					y: {
 						duration: 6,
-						repeat: Infinity,
+						repeat: isActive ? Infinity : 0,
 						repeatType: 'loop',
 						ease: 'easeInOut',
 					},

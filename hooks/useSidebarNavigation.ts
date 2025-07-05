@@ -1,10 +1,12 @@
 import { navLinks } from '@/lib/constants'
+import { useActiveSection } from '@/store/useActiveSection'
 import { useEffect, useRef, useState } from 'react'
 
 export function useSidebarNavigation(
 	scrollContainerRef: React.RefObject<HTMLDivElement | null>
 ) {
-	const [activeIndex, setActiveIndex] = useState(0)
+	const activeIndex = useActiveSection(state => state.activeIndex)
+	const setActiveIndex = useActiveSection.getState().setActiveIndex
 	const [liquidX, setLiquidX] = useState(0)
 	const refs = useRef<(HTMLDivElement | null)[]>([])
 	const activeIndexRef = useRef(activeIndex)

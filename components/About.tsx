@@ -1,5 +1,6 @@
 'use client'
 
+import { useActiveSection } from '@/store/useActiveSection'
 import { motion } from 'framer-motion'
 
 import {
@@ -26,6 +27,9 @@ const fadeInUP = {
 }
 
 const About = () => {
+	const isActive = useActiveSection(state => state.activeIndex === 1)
+  console.log(isActive);
+
 	return (
 		<section className='w-full h-full flex items-center justify-center px-6'>
 			<motion.div
@@ -75,15 +79,19 @@ const About = () => {
 							className='block mt-1 text-primary font-semibold tracking-wide drop-shadow hover:underline cursor-pointer '
 							onClick={() => alert('🥚 You found 2/5 easter eggs')}
 						>
-							<Typewriter
-								words={['“Keep it simple, stupid ^.^”']}
-								loop
-								cursor
-								cursorStyle='_'
-								typeSpeed={70}
-								deleteSpeed={50}
-								delaySpeed={1500}
-							/>
+							{isActive ? (
+								<Typewriter
+									words={['“Keep it simple, stupid ^.^”']}
+									loop
+									cursor
+									cursorStyle='_'
+									typeSpeed={70}
+									deleteSpeed={50}
+									delaySpeed={1500}
+								/>
+							) : (
+								'“Keep it simple, stupid ^.^”'
+							)}
 						</span>
 					</motion.p>
 
@@ -110,11 +118,11 @@ const About = () => {
 							>
 								<motion.div
 									animate={{
-										scale: [1, 1.15, 1],
+										scale: [1, isActive ? 1.15 : 1, 1],
 									}}
 									transition={{
 										duration: 3,
-										repeat: Infinity,
+										repeat: isActive ? Infinity : 0,
 										repeatType: 'loop',
 										delay: i * 0.3,
 										ease: 'easeInOut',

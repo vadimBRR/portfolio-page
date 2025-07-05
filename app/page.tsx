@@ -9,6 +9,7 @@ import { useRef } from 'react'
 
 export default function Home() {
 	const scrollRef = useRef<HTMLDivElement | null>(null)
+
 	return (
 		<div className='flex flex-row min-h-screen'>
 			<Sidebar scrollContainerRef={scrollRef}/>
