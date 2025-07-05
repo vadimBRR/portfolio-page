@@ -5,7 +5,6 @@ import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
 import Sidebar from '@/components/Sidebar'
 import Skills from '@/components/Skills'
-import Image from 'next/image'
 import { useRef } from 'react'
 
 export default function Home() {
@@ -16,18 +15,18 @@ export default function Home() {
 			<div className='flex-1 '>
 				<main
 					ref={scrollRef}
-					className='snap-y snap-proximity overflow-y-scroll h-screen scroll-smooth bg-gradient-to-br from-[#0a0a0a] to-[#111019]'
+					className='sm:snap-y sm:snap-proximity snap-none overflow-y-scroll h-screen scroll-smooth bg-gradient-to-br from-[#0a0a0a] to-[#111019]'
 				>
 					<section id='home' className='h-screen snap-start relative'>
 						<Hero />
 					</section>
-					<section id='about' className='h-screen snap-start'>
+					<section id='about' className='min-h-screen snap-start flex items-center justify-center'>
 						<About />
 					</section>
-					<section id='skills' className='h-screen snap-start'>
+					<section id='skills' className='min-h-screen snap-start my-6 flex items-center justify-center'>
 						<Skills />
 					</section>
-					<section id='projects' className='h-screen snap-start'>
+					<section id='projects' className='min-h-screen snap-start my-6'>
 						<Projects />
 					</section>
 					<section id='contact' className='h-screen snap-start'>

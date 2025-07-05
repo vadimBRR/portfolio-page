@@ -75,7 +75,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 			</div>
 
 			{/* Mobile */}
-			<div className='fixed bottom-0 inset-x-0 bg-background border-t custom-border flex flex-row justify-around items-center lg:hidden py-2 z-50'>
+			<div className='fixed bottom-0 inset-x-0 bg-background border-t custom-border flex flex-row justify-around items-center md:hidden py-2 z-50'>
 				<motion.div
 					layoutId='liquid-nav-mobile'
 					className='w-12 h-12 absolute'

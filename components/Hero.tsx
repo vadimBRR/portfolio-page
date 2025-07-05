@@ -14,7 +14,7 @@ const Hero = () => {
 					transition={{ duration: 0.6 }}
 				>
 					<span
-						onClick={() => alert("🥚 You found 1/5 easter eggs")}
+						onClick={() => alert('🥚 You found 1/5 easter eggs')}
 						className='cursor-pointer hover:underline'
 					>
 						Vadym Brovych
@@ -60,7 +60,7 @@ const Hero = () => {
 				</motion.p>
 
 				{/* Buttons */}
-				<div className='flex gap-4 mt-8'>
+				<div className='flex gap-4 mt-8 w-full  justify-center items-center lg:justify-start'>
 					<motion.div
 						className='flex items-center'
 						initial={{ opacity: 0, scale: 0.9 }}
@@ -78,7 +78,7 @@ const Hero = () => {
 					</motion.div>
 
 					<motion.div
-						className='flex items-center '
+						className='flex items-center'
 						initial={{ opacity: 0, scale: 0.9 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.4, delay: 0.7 }}

@@ -25,10 +25,9 @@ const fadeInUP = {
 	show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
 }
 
-
 const About = () => {
 	return (
-		<section className='w-full h-full flex items-center justify-center'>
+		<section className='w-full h-full flex items-center justify-center px-6'>
 			<motion.div
 				className='max-w-3xl text-center lg:text-left'
 				variants={containerVariant}
@@ -44,7 +43,10 @@ const About = () => {
 				</motion.h2>
 				<div className='space-y-5 text-sm sm:text-base leading-relaxed'>
 					<motion.p className='text-foreground/80' variants={fadeInUP}>
-						Hey, I'm <span className='text-white font-semibold'>Vadym</span> — a developer driven by curiosity. I love experimenting, building, and jumping into new ideas — not just for work, but because I genuinely enjoy it.
+						Hey, I'm <span className='text-white font-semibold'>Vadym</span> — a
+						developer driven by curiosity. I love experimenting, building, and
+						jumping into new ideas — not just for work, but because I genuinely
+						enjoy it.
 					</motion.p>
 
 					<motion.p className='text-foreground/70' variants={fadeInUP}>
@@ -60,11 +62,15 @@ const About = () => {
 					</motion.p>
 
 					<motion.p className='text-foreground/70' variants={fadeInUP}>
-						Programming, to me, is more than a job — it’s a playground where I bring ideas to life. I’m passionate about building clean, performant, and intuitive experiences that feel as good as they look.
+						Programming, to me, is more than a job — it’s a playground where I
+						bring ideas to life. I’m passionate about building clean,
+						performant, and intuitive experiences that feel as good as they
+						look.
 					</motion.p>
 
 					<motion.p className='text-foreground/70' variants={fadeInUP}>
-						There’s a line I heard once that just clicked — and it’s been my go-to ever since:
+						There’s a line I heard once that just clicked — and it’s been my
+						go-to ever since:
 						<span
 							className='block mt-1 text-primary font-semibold tracking-wide drop-shadow hover:underline cursor-pointer '
 							onClick={() => alert('🥚 You found 2/5 easter eggs')}
