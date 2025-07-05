@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { navLinks } from '@/lib/constants'
 import { useSidebarNavigation } from '@/hooks/useSidebarNavigation'
+import Image from 'next/image'
 
 type Props = {
 	scrollContainerRef: React.RefObject<HTMLDivElement | null>
@@ -13,8 +14,8 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 		<>
 			<div className='min-h-screen bg-background w-24 border-r custom-border flex-col items-center gap-8 pt-5 md:flex hidden'>
 				{/* Logo */}
-				<div className='bg-primary size-10 rounded-full text-white text-xl flex items-center justify-center font-bold'>
-					V
+				<div className='bg-primary size-10 rounded-full text-white text-xl flex items-center justify-center font-bold hover:bg-purple-400/40 transition duration-200 hover:scale-95'>
+					<Image src={'/icon.png'} width={40} height={40} alt='logo'/>
 				</div>
 
 				{/* Nav */}

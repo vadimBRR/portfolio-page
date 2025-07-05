@@ -11,7 +11,7 @@ const Skills = () => {
 				className='text-3xl sm:text-4xl text-primary font-bold mb-2'
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, delay: 0.1 }}
+				transition={{ duration: 0.6, delay: 0.2 }}
 				viewport={{ once: true }}
 			>
 				Skills & Technologies
@@ -20,7 +20,7 @@ const Skills = () => {
 				className='text-foreground/70 text-sm sm:text-base max-w-2xl text-center mb-8'
 				initial={{ opacity: 0, y: 30 }}
 				whileInView={{ opacity: 1, y: 0 }}
-				transition={{ duration: 0.6, delay: 0.3 }}
+				transition={{ duration: 0.6, delay: 0.4 }}
 				viewport={{ once: true }}
 			>
 				From sleek UIs to scalable APIs — I use modern tools to build clean,

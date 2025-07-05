@@ -35,7 +35,15 @@ export const skills = [
 	{
 		title: 'Backend',
 		icon: Server,
-		items: ['Node.js', 'Express.js', 'FastAPI', 'JWT', 'REST API', "Zod", "Prisma"],
+		items: [
+			'Node.js',
+			'Express.js',
+			'FastAPI',
+			'JWT',
+			'REST API',
+			'Zod',
+			'Prisma',
+		],
 	},
 	{
 		title: 'Databases',
@@ -45,6 +53,101 @@ export const skills = [
 	{
 		title: 'Other',
 		icon: ToolCase,
-		items: ['Python', 'Java', 'Docker', 'MQTT', 'Git', 'Vite', 'Figma', "Photoshop"],
+		items: [
+			'Python',
+			'Java',
+			'Docker',
+			'MQTT',
+			'Git',
+			'Vite',
+			'Figma',
+			'Photoshop',
+		],
+	},
+]
+
+export const projects = [
+	{
+		title: 'Personal Portfolio',
+		description:
+    'This site you’re browsing is a live, in-progress portfolio with dark mode, scroll snapping, motion, and easter eggs :)',
+		stack: [
+			'Next.js',
+			'TypeScript',
+			'Tailwind CSS',
+			'Framer Motion',
+			'Zustand',
+			'Vite',
+		],
+		link: 'https://github.com/vadimBRR/portfolio-page',
+	},
+
+	{
+		title: 'EverStock – Inventory App',
+		description:
+			'Cross-platform inventory system with real-time stock control, team management, analytics, and secure login.',
+		stack: [
+			'React Native',
+			'Supabase',
+			'Clerk',
+			'Zustand',
+			'TanStack Query',
+			'TypeScript',
+			'Tailwind CSS',
+		],
+		link: 'https://github.com/vadimBRR/EverStock',
+	},
+	{
+		title: '1024 Game – with Superpowers',
+		description:
+			'Modern 2048 remake with new mechanics, leaderboard, login system, and responsive UI.',
+		stack: [
+			'React',
+			'Spring Boot',
+			'SCSS',
+			'Vite',
+			'Axios',
+			'React Hook Form',
+			'Bootstrap',
+		],
+		link: 'https://github.com/vadimBRR/1024-game',
+	},
+	{
+		title: 'Magic Puzzle Solver',
+		description:
+			'Full-stack visualization of A*, Greedy, and DFS algorithms solving 8/15-puzzles with performance metrics.',
+		stack: [
+			'React',
+			'TypeScript',
+			'FastAPI',
+			'Tailwind CSS',
+			'Vite',
+			'SQLite',
+			'SQLAlchemy',
+		],
+		link: 'https://github.com/vadimBRR/15Puzzle-ISI',
+	},
+	{
+		title: 'SmartAttendance – IoT Attendance System',
+		description:
+			'ISIC-based classroom attendance system using RFID, MQTT, and custom FSM logic.',
+		stack: [
+			'React',
+			'FastAPI',
+			'MQTT',
+			'Tailwind CSS',
+			'TypeScript',
+			'SQLite',
+			'SQLAlchemy',
+			'Vite',
+		],
+		link: 'https://github.com/vadimBRR/SmartAttendance',
+	},
+	{
+		title: 'Legends of the Blade – RPG Game',
+		description:
+			'Stylized action RPG with waves of enemies, sword/magic combat, and in-game upgrades.',
+		stack: ['Unity (URP)', 'C#'],
+		link: 'https://github.com/vadimBRR/legends-of-the-blade-unity',
 	},
 ]

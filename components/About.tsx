@@ -28,7 +28,6 @@ const fadeInUP = {
 
 const About = () => {
 	const isActive = useActiveSection(state => state.activeIndex === 1)
-  console.log(isActive);
 
 	return (
 		<section className='w-full h-full flex items-center justify-center px-6'>
