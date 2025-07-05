@@ -15,7 +15,7 @@ export default function Home() {
 		<div className='flex flex-row min-h-screen'>
 			<Sidebar scrollContainerRef={scrollRef} />
 			<div className='flex-1 '>
-        {/* sm:snap-y sm:snap-proximity snap-none  */}
+				{/* sm:snap-y sm:snap-proximity snap-none  */}
 				<main
 					ref={scrollRef}
 					className='overflow-y-scroll h-screen bg-gradient-to-br from-[#0a0a0a] to-[#111019]'
@@ -40,7 +40,10 @@ export default function Home() {
 					</section>
 					<SectionDivider />
 
-					<section id='projects' className='min-h-screen snap-start my-6  flex items-center justify-center'>
+					<section
+						id='projects'
+						className='min-h-screen snap-start my-6  flex items-center justify-center'
+					>
 						<Projects />
 					</section>
 					<section id='contact' className='h-screen snap-start'>

@@ -76,7 +76,7 @@ const Hero = () => {
 					>
 						<motion.a
 							href='#contact'
-							className='bg-primary text-white px-6 py-3 rounded-full hover:brightness-105 transition-colors'
+							className='bg-primary text-white px-6 py-3 rounded-full hover:brightness-105 transition-colors text-center'
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 						>
@@ -93,7 +93,7 @@ const Hero = () => {
 						<motion.a
 							href='/Vadym_Brovych_CV.pdf'
 							download
-							className='border border-primary text-primary hover:text-white hover:border-white transition-colors px-6 py-3 rounded-full'
+							className='border border-primary text-primary hover:text-white hover:border-white transition-colors px-6 py-3 rounded-full text-center'
 							whileHover={{ scale: 1.05 }}
 							whileTap={{ scale: 0.95 }}
 						>

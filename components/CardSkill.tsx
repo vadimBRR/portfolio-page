@@ -44,7 +44,7 @@ const CardSkill = ({ title, icon: Icon, items, index }: Props) => {
 				{items.map((item, i) => (
 					<span
 						key={i}
-						className={`bg-white/10 text-white/80 px-2 py-1 rounded-md hover:bg-purple-500/20 cursor-pointer transition duration-200 scale-100 hover:scale-105 ${
+						className={`bg-white/10 text-white/80 px-2 py-1 rounded-md hover:bg-purple-500/30 cursor-pointer transition duration-200 scale-100 hover:scale-105 ${
 							item === 'Tailwind CSS'
 								? 'hover:bg-red-500/20'
 								: 'hover:bg-purple-500/20'
