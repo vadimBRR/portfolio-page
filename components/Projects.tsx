@@ -24,10 +24,9 @@ const Projects = () => {
 
 			<motion.p
 				className='mt-8 text-xs text-foreground/40 italic text-center'
-				initial='hidden'
-				whileInView='show'
-				variants={fadeInUP}
-				transition={{ duration: 0.5, delay: 3 }}
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 0.6, delay: 2 }}
 				viewport={{ once: true }}
 			>
 				I start too much and finish too little. I know. I'm working on it :3

@@ -1,6 +1,7 @@
 'use client'
 import { ExternalLink } from 'lucide-react'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 type Props = {
 	title: string
 	description: string
@@ -9,19 +10,39 @@ type Props = {
 	index: number
 }
 const ProjectsCard = ({ title, description, stack, link, index }: Props) => {
+	const [count, setCount] = useState(5)
+
+	const handleClickCard = () => {
+		if (title === 'Personal Portfolio' && count !== 1) {
+			setCount(count - 1)
+		} else if (title === 'Personal Portfolio' && count === 1) {
+			alert('🥚 You found 4/5 easter eggs')
+			setCount(5)
+		}
+	}
 	return (
 		<motion.div
-			className='group relative flex flex-col justify-between bg-gradient-to-br from-[#16151d] to-[#1d1b26] border border-white/10 rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:shadow-[-1px_8px_30px_rgba(123,63,228,0.3)] transition-all duration-300 hover:-translate-y-2 h-full min-h-[200px]'
+			className={`group relative flex flex-col justify-between bg-gradient-to-br from-[#16151d] to-[#1d1b26] border border-white/10 rounded-2xl p-6 shadow-[0_8px_24px_rgba(0,0,0,0.3)] hover:shadow-[-1px_8px_30px_rgba(123,63,228,0.3)] transition-all duration-300 hover:-translate-y-2 h-full min-h-[200px] ${
+				title === 'Personal Portfolio' ? 'cursor-pointer' : ''
+			}`}
 			initial={{ opacity: 0, y: 30 }}
 			whileInView={{ opacity: 1, y: 0 }}
 			transition={{ duration: 0.5, delay: 0.5 + index * 0.2 }}
 			viewport={{ once: true }}
+			onClick={handleClickCard}
 		>
-      <div className="absolute pointer-events-none inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-lg bg-purple-800/5  ring-1 ring-transparent group-hover:ring-primary/10  "></div>
-			<div className=''>
-				<h3 className='text-white text-lg font-bold group-hover:text-primary transition mb-2'>
-					{title}
-				</h3>
+			<div className='absolute pointer-events-none inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 blur-lg bg-purple-800/5  ring-1 ring-transparent group-hover:ring-primary/10  '></div>
+			<div className='w-full'>
+				<div className='w-full flex flex-row justify-between'>
+					<h3 className='text-white text-lg font-bold group-hover:text-primary transition mb-2'>
+						{title}
+					</h3>
+					{title === 'Personal Portfolio' && count !== 5 && (
+						<div className='text-white font-semibold '>
+							<h2>{count}</h2>
+						</div>
+					)}
+				</div>
 				<p className='text-sm text-foreground/70 mb-4'>{description}</p>
 				<div className='flex flex-wrap gap-2 text-xs text-white/80 mb-4'>
 					{stack.map((tech, i) => (

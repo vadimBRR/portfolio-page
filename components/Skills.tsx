@@ -33,6 +33,16 @@ const Skills = () => {
 					<CardSkill {...skill} index={i} key={i} />
 				))}
 			</div>
+
+			<motion.p
+				className='mt-8 text-xs text-foreground/40 italic text-center'
+				initial={{ opacity: 0 }}
+				whileInView={{ opacity: 1 }}
+				transition={{ duration: 0.6, delay: 1 }}
+				viewport={{ once: true }}
+			>
+				Every tool here has caused me joy or pain. Or both.
+			</motion.p>
 		</section>
 	)
 }
