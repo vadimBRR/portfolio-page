@@ -1,8 +1,9 @@
-"use client"
+'use client'
 import About from '@/components/About'
 import Contact from '@/components/Contact'
 import Hero from '@/components/Hero'
 import Projects from '@/components/Projects'
+import SectionDivider from '@/components/SectionDivider'
 import Sidebar from '@/components/Sidebar'
 import Skills from '@/components/Skills'
 import { useRef } from 'react'
@@ -12,7 +13,7 @@ export default function Home() {
 
 	return (
 		<div className='flex flex-row min-h-screen'>
-			<Sidebar scrollContainerRef={scrollRef}/>
+			<Sidebar scrollContainerRef={scrollRef} />
 			<div className='flex-1 '>
 				<main
 					ref={scrollRef}
@@ -21,12 +22,23 @@ export default function Home() {
 					<section id='home' className='h-screen snap-start relative'>
 						<Hero />
 					</section>
-					<section id='about' className='min-h-screen snap-start flex items-center justify-center'>
+					<SectionDivider />
+					<section
+						id='about'
+						className='min-h-screen snap-start flex items-center justify-center'
+					>
 						<About />
 					</section>
-					<section id='skills' className='min-h-screen snap-start my-6 flex items-center justify-center'>
+					<SectionDivider />
+
+					<section
+						id='skills'
+						className='min-h-screen snap-start my-12 md:my-6  flex items-center justify-center'
+					>
 						<Skills />
 					</section>
+					<SectionDivider />
+
 					<section id='projects' className='min-h-screen snap-start my-6'>
 						<Projects />
 					</section>

@@ -1,12 +1,22 @@
-import { Home, User, FolderGit2, Mail, Code , Code2, Server, Database, ToolCase} from 'lucide-react'
-import {  } from 'lucide-react'
+import {
+	Home,
+	User,
+	FolderGit2,
+	Mail,
+	Code,
+	Code2,
+	Server,
+	Database,
+	ToolCase,
+} from 'lucide-react'
+import {} from 'lucide-react'
 
 export const navLinks = [
-  { id: 0, name: 'Home', icon: Home },
-  { id: 1, name: 'About', icon: User },
-  { id: 2, name: 'Skills', icon: Code },
-  { id: 3, name: 'Projects', icon: FolderGit2 },
-  { id: 4, name: 'Contact', icon: Mail },
+	{ id: 0, name: 'Home', icon: Home },
+	{ id: 1, name: 'About', icon: User },
+	{ id: 2, name: 'Skills', icon: Code },
+	{ id: 3, name: 'Projects', icon: FolderGit2 },
+	{ id: 4, name: 'Contact', icon: Mail },
 ]
 
 export const skills = [
@@ -25,7 +35,7 @@ export const skills = [
 	{
 		title: 'Backend',
 		icon: Server,
-		items: ['Node.js', 'Express.js', 'FastAPI', 'JWT', 'REST API'],
+		items: ['Node.js', 'Express.js', 'FastAPI', 'JWT', 'REST API', "Zod", "Prisma"],
 	},
 	{
 		title: 'Databases',
@@ -35,6 +45,6 @@ export const skills = [
 	{
 		title: 'Other',
 		icon: ToolCase,
-		items: ['Python', 'Java', 'Docker', 'MQTT', 'Git', 'Vite', 'Figma'],
+		items: ['Python', 'Java', 'Docker', 'MQTT', 'Git', 'Vite', 'Figma', "Photoshop"],
 	},
 ]

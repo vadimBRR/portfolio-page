@@ -9,7 +9,7 @@ const Hero = () => {
 	return (
 		<section className='w-full h-full flex flex-col-reverse lg:flex-row justify-center items-center px-6'>
 			{/* Text */}
-			<div className='flex-1 max-w-xl'>
+			<div className='flex-1 max-w-xl '>
 				<motion.h1
 					className='text-4xl sm:text-6xl font-bold text-foreground text-center lg:text-left relative group'
 					initial={{ opacity: 0, y: 30 }}
@@ -33,25 +33,27 @@ const Hero = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6, delay: 0.2 }}
 				>
-          {isActive ? (
-					<Typewriter
-						words={[
-							'Full Stack Developer',
-							'React Engineer',
-							'TypeScript Fan',
-							'Express.js in Progress',
-							'Meow <3',
-							'Still typing...',
-							'console.log("Hello World!")',
-						]}
-						loop
-						cursor
-						cursorStyle='_'
-						typeSpeed={70}
-						deleteSpeed={50}
-						delaySpeed={1500}
-					/>
-          ) : 'Full Stack Developer'}
+					{isActive ? (
+						<Typewriter
+							words={[
+								'Full Stack Developer',
+								'React Engineer',
+								'TypeScript Fan',
+								'Express.js in Progress',
+								'Meow <3',
+								'Still typing...',
+								'console.log("Hello World!")',
+							]}
+							loop
+							cursor
+							cursorStyle='_'
+							typeSpeed={70}
+							deleteSpeed={50}
+							delaySpeed={1500}
+						/>
+					) : (
+						'Full Stack Developer'
+					)}
 				</motion.h2>
 				<motion.p
 					className='text-foreground/70 text-sm sm:text-base mt-3 lg:mt-6 text-center lg:text-left'
@@ -103,7 +105,7 @@ const Hero = () => {
 
 			{/* Photo */}
 			<motion.div
-				className='flex-1 relative flex h-full items-center lg:items-end z-10 '
+				className=' relative flex h-full items-center lg:items-end z-10 '
 				initial={{ opacity: 0, y: 0 }}
 				animate={{ opacity: 1, y: [0, isActive ? -15 : 0, 0] }}
 				transition={{
