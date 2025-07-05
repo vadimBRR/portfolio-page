@@ -8,9 +8,18 @@ export function useSidebarNavigation(
 	const activeIndex = useActiveSection(state => state.activeIndex)
 	const setActiveIndex = useActiveSection.getState().setActiveIndex
 	const [liquidX, setLiquidX] = useState(0)
+	const [logoClickedCount, setLogoClickedCount] = useState(0)
 	const refs = useRef<(HTMLDivElement | null)[]>([])
 	const activeIndexRef = useRef(activeIndex)
 	const isManuallyScroll = useRef(false)
+
+	const handleClickLogo = () => {
+		if (logoClickedCount !== 5) setLogoClickedCount(logoClickedCount + 1)
+		else {
+      alert('🥚 You found 5/5 easter eggs')
+      setLogoClickedCount(0)
+		}
+	}
 
 	const updateLiquid = (id: number) => {
 		const el = refs.current[id]
@@ -78,19 +87,18 @@ export function useSidebarNavigation(
 		return () => scrollEl.removeEventListener('scroll', handleScroll)
 	}, [])
 
-  useEffect(()=>{
-    const handleResize = ()=> {
-      updateLiquid(activeIndexRef.current)
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize',handleResize)
-    
-  },[])
-
 	useEffect(() => {
-    updateLiquid(0)
+		const handleResize = () => {
+			updateLiquid(activeIndexRef.current)
+		}
+
+		window.addEventListener('resize', handleResize)
+		return () => window.removeEventListener('resize', handleResize)
 	}, [])
 
-  return {activeIndex, liquidX, handleClick, refs}
+	useEffect(() => {
+		updateLiquid(0)
+	}, [])
+
+	return { activeIndex, liquidX, handleClick, refs, handleClickLogo, logoClickedCount }
 }

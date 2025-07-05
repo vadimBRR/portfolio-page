@@ -2,12 +2,16 @@ import {
 	Home,
 	User,
 	FolderGit2,
-	Mail,
 	Code,
 	Code2,
 	Server,
 	Database,
 	ToolCase,
+	Mail,
+	Github,
+	Linkedin,
+	Instagram,
+	Facebook,
 } from 'lucide-react'
 import {} from 'lucide-react'
 
@@ -70,7 +74,7 @@ export const projects = [
 	{
 		title: 'Personal Portfolio',
 		description:
-    'This site you’re browsing is a live, in-progress portfolio with dark mode, scroll snapping, motion, and easter eggs :)',
+			'This site you’re browsing is a live, in-progress portfolio with dark mode, scroll snapping, motion, and easter eggs :)',
 		stack: [
 			'Next.js',
 			'TypeScript',
@@ -149,5 +153,45 @@ export const projects = [
 			'Stylized action RPG with waves of enemies, sword/magic combat, and in-game upgrades.',
 		stack: ['Unity (URP)', 'C#'],
 		link: 'https://github.com/vadimBRR/legends-of-the-blade-unity',
+	},
+]
+
+export const contact_links = [
+	{
+		label: 'Email me',
+		icon: Mail,
+		href: 'mailto:vadmabos.programming@gmail.com',
+		color: 'text-primary',
+	},
+
+	{
+		label: '@vadimBRR',
+		icon: Github,
+		href: 'https://github.com/vadimBRR',
+		color: 'text-primary',
+	},
+	{
+		label: 'Vadym Brovych',
+		icon: Linkedin,
+		href: 'https://www.linkedin.com/in/vadym-brovych-23366b321/',
+		color: 'text-primary',
+	},
+	{
+		label: '@naymmess',
+		icon: Instagram,
+		href: 'https://www.instagram.com/naymmess/',
+		color: 'text-pink-400',
+	},
+	{
+		label: '@naymmess',
+		icon: Facebook,
+		href: 'https://www.facebook.com/naymmess',
+		color: 'text-blue-400',
+	},
+	{
+		label: '@vadimbrovich_',
+		iconName: '𝕏',
+		href: 'https://x.com/vadimbrovich_',
+		color: 'text-white',
 	},
 ]
