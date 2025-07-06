@@ -18,9 +18,9 @@ export default function Home() {
 				{/* sm:snap-y sm:snap-proximity snap-none  */}
 				<main
 					ref={scrollRef}
-					className='overflow-y-scroll h-screen bg-gradient-to-br from-[#0a0a0a] to-[#111019]'
+					className='overflow-y-scroll h-screen  bg-gradient-to-br from-[#0a0a0a] to-[#111019]'
 				>
-					<section id='home' className='h-screen snap-start relative'>
+					<section id='home' className='h-screen snap-start relative flex items-center justify-center'>
 						<Hero />
 					</section>
 					<SectionDivider />

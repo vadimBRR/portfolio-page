@@ -7,9 +7,9 @@ const Hero = () => {
 	const isActive = useActiveSection(state => state.activeIndex === 0)
 
 	return (
-		<section className='w-full h-full flex flex-col-reverse lg:flex-row justify-center items-center px-6'>
+		<section className='w-full h-full flex flex-col-reverse lg:flex-row justify-center items-center px-6 gap-10'>
 			{/* Text */}
-			<div className='flex-1 max-w-xl '>
+			<div className='lg:flex-1 max-w-xl '>
 				<motion.h1
 					className='text-4xl sm:text-6xl font-bold text-foreground text-center lg:text-left relative group'
 					initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,7 @@ const Hero = () => {
 
 			{/* Photo */}
 			<motion.div
-				className=' relative flex h-full items-center lg:items-end z-10 '
+				className='relative flex lg:h-full items-center lg:items-center z-10'
 				initial={{ opacity: 0, y: 0 }}
 				animate={{ opacity: 1, y: [0, isActive ? -15 : 0, 0] }}
 				transition={{
@@ -118,14 +118,18 @@ const Hero = () => {
 					},
 				}}
 			>
-				<Image
-					src='/images/avatar.png'
-					alt='Vadym Brovych photo'
-					width={500}
-					height={500}
-					className='w-auto h-[40vh] sm:h-[60vh] lg:h-[90vh] object-contain drop-shadow-[0_0_60px_rgba(123,63,228,0.3)] select-none pointer-events-none'
-					priority
-				/>
+				<div className='relative w-[250px] sm:w-[300px] lg:w-[400px] aspect-square rounded-full flex items-center justify-center before:content-[""] before:absolute before:inset-0 before:rounded-full before:bg-gradient-to-br before:from-[#7B3FE4] before:to-[#FF61C7] before:blur-xl before:opacity-30'>
+					<div className='z-10 rounded-full overflow-hidden border-2 border-purple-400/30'>
+						<Image
+							src='/images/avatar.png'
+							alt='Vadym Brovych photo'
+							width={400}
+							height={400}
+							className='object-cover w-full h-full select-none pointer-events-none'
+							priority
+						/>
+					</div>
+				</div>
 			</motion.div>
 		</section>
 	)
