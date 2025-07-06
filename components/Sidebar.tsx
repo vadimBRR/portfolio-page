@@ -46,7 +46,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 						className='absolute w-12 h-12 z-0'
 						initial={false}
 						animate={{ top: `${activeIndex * 88}px` }}
-						transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+						transition={{ type: 'spring', stiffness: 300, damping: 40 }}
 					>
 						<motion.div
 							key={activeIndex}

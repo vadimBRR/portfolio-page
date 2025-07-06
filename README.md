@@ -1,36 +1,64 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# 🌐 Personal Portfolio – Vadym Brovych
 
-First, run the development server:
+This is a **custom-built developer portfolio** built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **Framer Motion**. It showcases my work, tech stack, and contact info in a clean, responsive layout with animated transitions and dynamic state tracking.
+
+
+> 🔗 Live: [vadym-brovych.vercel.app](https://vadym-brovych.vercel.app/)
+
+---
+
+## 🖼️ UI Preview
+
+| Hero Section | About Me |
+|--------------|-------------|
+| ![](public/screenshots/photo-1.png) | ![](public/screenshots/photo-2.png) |
+
+| Skills Grid | Projects List |
+|---------------|---------------|
+| ![](public/screenshots/photo-3.png) | ![](public/screenshots/photo-4.png) |
+
+---
+
+## 🧰 Tech Stack
+
+| Layer       | Technology                      |
+|-------------|----------------------------------|
+| Framework   | Next.js 15 (App Router)         |
+| Styling     | Tailwind CSS                    |
+| Animations  | Framer Motion                   |
+| State Mgmt  | Zustand                         |
+| Fonts       | Google Fonts (Poppins)          |
+| Icons       | Lucide React, React Icons       |
+| Deployment  | Vercel                          |
+
+---
+
+## ✨ Features
+
+- 🧠 **Dynamic hero section** with Typewriter and hidden easter eggs
+- ⚙️ **Scroll-aware sidebar** (desktop & mobile) with animated liquid effect
+- 📂 **Modular project cards** with hover details and interactions
+- 📱 **Fully responsive** layout with clean component design
+- 📨 **Contact grid** with social links, hover effects, and call to action
+- 🎨 **Dark-themed UI** with gradients and subtle shadows
+
+---
+
+## 🚀 Getting Started
 
 ```bash
+git clone https://github.com/vadimBRR/portfolio-page.git
+cd portfolio-page
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The app runs locally at: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 👤 Author
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Developed by [Vadym Brovych](mailto:vadmabos.programming@gmail.com)
+🗓️ July 2025

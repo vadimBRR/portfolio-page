@@ -21,13 +21,16 @@ export function useSidebarNavigation(
 		}
 	}
 
-	const updateLiquid = (id: number) => {
+const updateLiquid = (id: number) => {
+	requestAnimationFrame(() => {
 		const el = refs.current[id]
 		if (el) {
 			const rect = el.getBoundingClientRect()
 			setLiquidX(rect.left + rect.width / 2 - 24)
 		}
-	}
+	})
+}
+
 
 	const handleClick = (id: number, name: string) => {
 		setActiveIndex(id)
@@ -36,7 +39,10 @@ export function useSidebarNavigation(
 		document
 			.getElementById(name.toLowerCase())
 			?.scrollIntoView({ behavior: 'smooth' })
+		// updateLiquid(id)
+    setTimeout(() => {
 		updateLiquid(id)
+	}, 400)
 
 		const scrollEl = scrollContainerRef.current
 		if (scrollEl) {
