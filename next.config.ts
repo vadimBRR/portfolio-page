@@ -1,9 +1,7 @@
 import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
-	output: 'export',
-	basePath: '/portfolio-page',
-	assetPrefix: '/portfolio-page/',
+	// output: 'export',
 }
 
 export default nextConfig
