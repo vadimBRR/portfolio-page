@@ -23,7 +23,13 @@ const ContactCard = ({ label, icon: Icon, href, color, index }: Props) => {
 				className={`${color} group-hover:scale-110 transition-transform`}
 			/>
 
-			{label}
+			<span
+  className={`${
+    href.includes('mailto') ? 'text-xs' : 'text-sm sm:text-xs'
+  } truncate`}
+>
+  {label}
+</span>
 		</motion.a>
 	)
 }
