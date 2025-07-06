@@ -61,7 +61,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 					</motion.div>
 
 					{/* Icons */}
-					{navLinks.map((link, i) => {
+					{navLinks.map(link => {
 						const Icon = link.icon
 						const isActive = link.id === activeIndex
 
@@ -114,7 +114,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 					></motion.div>
 				</motion.div>
 
-				{navLinks.map((link, i) => {
+				{navLinks.map(link => {
 					const Icon = link.icon
 					const isActive = link.id === activeIndex
 

@@ -16,8 +16,8 @@ export function useSidebarNavigation(
 	const handleClickLogo = () => {
 		if (logoClickedCount !== 5) setLogoClickedCount(logoClickedCount + 1)
 		else {
-      alert('🥚 You found 5/5 easter eggs')
-      setLogoClickedCount(0)
+			alert('🥚 You found 5/5 easter eggs')
+			setLogoClickedCount(0)
 		}
 	}
 
@@ -100,5 +100,12 @@ export function useSidebarNavigation(
 		updateLiquid(0)
 	}, [])
 
-	return { activeIndex, liquidX, handleClick, refs, handleClickLogo, logoClickedCount }
+	return {
+		activeIndex,
+		liquidX,
+		handleClick,
+		refs,
+		handleClickLogo,
+		logoClickedCount,
+	}
 }

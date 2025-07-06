@@ -1,5 +1,3 @@
-import { LucideProps } from 'lucide-react'
-import { ForwardRefExoticComponent, RefAttributes } from 'react'
 import { motion } from 'framer-motion'
 type Props = {
 	label: string

@@ -29,7 +29,8 @@ const Projects = () => {
 				transition={{ duration: 0.6, delay: 2 }}
 				viewport={{ once: true }}
 			>
-				I start too much and finish too little. I know. I'm working on it :3
+				I start too much and finish too little. I know. I&apos;m working on it
+				:3
 			</motion.p>
 		</section>
 	)

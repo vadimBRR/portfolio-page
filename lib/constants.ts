@@ -191,11 +191,11 @@ export const contact_links = [
 	},
 	{
 		label: '@vadimbrovich_',
-    icon:SiX,
+		icon: SiX,
 		href: 'https://x.com/vadimbrovich_',
 		color: 'text-white',
 	},
-  {
+	{
 		label: '@vadimbrovich',
 		icon: SiTelegram,
 		href: 'https://t.me/vadimbrovich',

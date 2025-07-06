@@ -26,8 +26,8 @@ const Contact = () => {
 				transition={{ duration: 0.5, delay: 0.5 }}
 			>
 				Open to freelance work, internships, side quests, or just interesting
-				ideas. I'm flexible, curious, and ready for almost anything — especially
-				if it sounds fun or challenging.
+				ideas. I&apos;m flexible, curious, and ready for almost anything —
+				especially if it sounds fun or challenging.
 			</motion.p>
 
 			{/* Contact Container */}

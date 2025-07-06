@@ -7,7 +7,7 @@ import SectionDivider from '@/components/SectionDivider'
 import Sidebar from '@/components/Sidebar'
 import Skills from '@/components/Skills'
 import { useRef } from 'react'
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 export default function Home() {
 	const scrollRef = useRef<HTMLDivElement | null>(null)
 
@@ -55,17 +55,16 @@ export default function Home() {
 						<Contact />
 					</section>
 					<motion.div
-	className='flex flex-col items-center justify-center gap-2 mt-16 mb-20 sm:mb-10'
-	initial={{ opacity: 0 }}
-	whileInView={{ opacity: 1 }}
-	viewport={{ once: true }}
->
-	<div className='w-[60%] h-[1.5px] bg-white/15 rounded-full shadow-[0_0_15px_#ffffff33]' />
-	<p className='text-xs text-white/30 text-center select-none hover:text-white/50 transition'>
-		© {new Date().getFullYear()} Vadym Brovych. All rights reserved.
-	</p>
-</motion.div>
-
+						className='flex flex-col items-center justify-center gap-2 mt-16 mb-20 sm:mb-10'
+						initial={{ opacity: 0 }}
+						whileInView={{ opacity: 1 }}
+						viewport={{ once: true }}
+					>
+						<div className='w-[60%] h-[1.5px] bg-white/15 rounded-full shadow-[0_0_15px_#ffffff33]' />
+						<p className='text-xs text-white/30 text-center select-none hover:text-white/50 transition'>
+							© {new Date().getFullYear()} Vadym Brovych. All rights reserved.
+						</p>
+					</motion.div>
 				</main>
 			</div>
 		</div>

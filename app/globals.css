@@ -4,10 +4,10 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  --color-primary: #f20574;             /* Акцент (рожево-малиновий) */
-  --color-primary-hover: #ff469b;       /* Hover-ефект */
-  --color-accent: #f46d91;              /* Додатковий акцент */
-  --color-input: #f1f1f1;               /* Світлий input фон */
+  --color-primary: #f20574;            
+  --color-primary-hover: #ff469b;       
+  --color-accent: #f46d91;              
+  --color-input: #f1f1f1;               
   --color-task-card: #f9f9f9;
   --color-border: rgba(243, 244, 246, 0.1);
 }
@@ -24,9 +24,9 @@
     --background: #0a0a0a;
     --foreground: #e5e5e5;
 
-    --color-primary: #7B3FE4;            /* 🌌 Фіолетовий */
-    --color-primary-hover: #A560F5;      /* 🔮 Hover */
-    --color-accent: #FF61C7;             /* 💗 Додатковий акцент */
+    --color-primary: #7B3FE4;            
+    --color-primary-hover: #A560F5;      
+    --color-accent: #FF61C7;            
     --color-input: #141414;
     --color-border: rgba(255, 255, 255, 0.08);
     --color-task-card: #1a1a1a;

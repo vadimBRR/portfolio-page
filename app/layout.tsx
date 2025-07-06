@@ -1,7 +1,6 @@
 import type { Metadata } from 'next'
-import { Geist, Geist_Mono, Poppins } from 'next/font/google'
+import { Poppins } from 'next/font/google'
 import './globals.css'
-import Sidebar from '@/components/Sidebar'
 
 const poppins = Poppins({
 	subsets: ['latin'],
@@ -12,7 +11,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
 	title: 'Vadym Brovych Portfolio',
-	description: 'Junior Full Stack Developer Portfolio',
+	description:
+		'Personal portfolio of Vadym Brovych: showcasing projects, skills and contact info',
 	icons: {
 		icon: '/icon.ico',
 		shortcut: '/icon.png',

@@ -46,7 +46,8 @@ const About = () => {
 				</motion.h2>
 				<div className='space-y-5 text-sm sm:text-base leading-relaxed'>
 					<motion.p className='text-foreground/80' variants={fadeInUP}>
-						Hey, I'm <span className='text-white font-semibold'>Vadym</span> — a
+						Hey, I&apos;m{' '}
+						<span className='text-white font-semibold'>Vadym</span> — a
 						developer driven by curiosity. I love experimenting, building, and
 						jumping into new ideas — not just for work, but because I genuinely
 						enjoy it.

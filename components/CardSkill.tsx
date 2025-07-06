@@ -11,8 +11,8 @@ type Props = {
 	index: number
 }
 const CardSkill = ({ title, icon: Icon, items, index }: Props) => {
-    const isActive = useActiveSection(state => state.activeIndex === 1)
-  
+	const isActive = useActiveSection(state => state.activeIndex === 1)
+
 	const handleClick = (item: string) => {
 		if (item === 'Tailwind CSS') {
 			alert('🥚 You found 3/5 easter eggs')
@@ -28,7 +28,7 @@ const CardSkill = ({ title, icon: Icon, items, index }: Props) => {
 		>
 			<motion.div
 				animate={{
-          opacity: [1, 0.6, 1]
+					opacity: [1, 0.6, 1],
 				}}
 				transition={{
 					duration: 3,
