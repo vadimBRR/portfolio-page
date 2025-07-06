@@ -9,7 +9,10 @@ export function useSidebarNavigation(
 	const setActiveIndex = useActiveSection.getState().setActiveIndex
 	const [liquidX, setLiquidX] = useState(0)
 	const [logoClickedCount, setLogoClickedCount] = useState(0)
+	const [isTransitioning, setIsTransitioning] = useState(false)
+
 	const refs = useRef<(HTMLDivElement | null)[]>([])
+	let rafId: number | null = null
 	const activeIndexRef = useRef(activeIndex)
 	const isManuallyScroll = useRef(false)
 
@@ -21,43 +24,45 @@ export function useSidebarNavigation(
 		}
 	}
 
-const updateLiquid = (id: number) => {
-	requestAnimationFrame(() => {
-		const el = refs.current[id]
-		if (el) {
-			const rect = el.getBoundingClientRect()
-			setLiquidX(rect.left + rect.width / 2 - 24)
+	const updateLiquid = (id: number) => {
+	const el = refs.current[id]
+	if (el) {
+		const rect = el.getBoundingClientRect()
+		setLiquidX(rect.left + rect.width / 2 - 24)
+	}
+}
+
+	const handleClick = (id: number, name: string) => {
+	if (isTransitioning) return
+	setIsTransitioning(true)
+	setActiveIndex(id)
+	isManuallyScroll.current = true
+
+	updateLiquid(id) // 🟢 одразу перемістити indicator
+
+	document.getElementById(name.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })
+
+	const scrollEl = scrollContainerRef.current
+	if (scrollEl) {
+		const onScrollEnd = () => {
+			updateLiquid(id) // 🔁 ще раз підтвердити після скролу
+			isManuallyScroll.current = false
+			setIsTransitioning(false)
+			scrollEl.removeEventListener('scrollend', onScrollEnd as any)
 		}
-	})
+		scrollEl.addEventListener('scrollend', onScrollEnd as any)
+
+		// fallback
+		setTimeout(() => {
+			updateLiquid(id)
+			isManuallyScroll.current = false
+			setIsTransitioning(false)
+			scrollEl.removeEventListener('scrollend', onScrollEnd as any)
+		}, 600)
+	}
 }
 
 
-	const handleClick = (id: number, name: string) => {
-		setActiveIndex(id)
-		isManuallyScroll.current = true
-
-		document
-			.getElementById(name.toLowerCase())
-			?.scrollIntoView({ behavior: 'smooth' })
-		// updateLiquid(id)
-    setTimeout(() => {
-		updateLiquid(id)
-	}, 400)
-
-		const scrollEl = scrollContainerRef.current
-		if (scrollEl) {
-			const onScrollEnd = () => {
-				isManuallyScroll.current = false
-				scrollEl.removeEventListener('scrollend', onScrollEnd as any)
-			}
-			scrollEl.addEventListener('scrollend', onScrollEnd as any)
-
-			// if event doesnt work well:
-			setTimeout(() => {
-				isManuallyScroll.current = false
-			}, 800)
-		}
-	}
 
 	useEffect(() => {
 		activeIndexRef.current = activeIndex

@@ -46,7 +46,8 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 						className='absolute w-12 h-12 z-0'
 						initial={false}
 						animate={{ top: `${activeIndex * 88}px` }}
-						transition={{ type: 'spring', stiffness: 300, damping: 40 }}
+						transition={{ type: 'spring', stiffness: 300, damping: 35, duration: 0.25}}
+            
 					>
 						<motion.div
 							key={activeIndex}
@@ -56,7 +57,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 								scaleY: [1, 1.3, 1],
 								borderRadius: ['0.75rem', '1.5rem', '0.75rem'],
 							}}
-							transition={{ duration: 0.4, ease: 'easeInOut' }}
+							transition={{ duration: 0.2, ease: 'easeInOut' }}
 						></motion.div>
 					</motion.div>
 
@@ -102,7 +103,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 					className='w-12 h-12 absolute'
 					animate={{ left: liquidX }}
 					initial={false}
-					transition={{ type: 'spring', stiffness: 300, damping: 25 }}
+					transition={{ type: 'spring', stiffness: 300, damping: 35, duration: 0.25 }}
 				>
 					<motion.div
 						key={activeIndex}
@@ -111,6 +112,7 @@ const Sidebar = ({ scrollContainerRef }: Props) => {
 							scaleX: [1, 1.4, 1],
 							borderRadius: ['0.75rem', '1.5rem', '0.75rem'],
 						}}
+            transition={{ duration: 0.2, ease: 'easeInOut' }}
 					></motion.div>
 				</motion.div>
 
