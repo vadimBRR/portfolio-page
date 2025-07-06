@@ -62,7 +62,7 @@ export default function Home() {
 >
 	<div className='w-[60%] h-[1.5px] bg-white/15 rounded-full shadow-[0_0_15px_#ffffff33]' />
 	<p className='text-xs text-white/30 text-center select-none hover:text-white/50 transition'>
-		© {new Date().getFullYear()} Vadym Brovych — built with pixels & bugs.
+		© {new Date().getFullYear()} Vadym Brovych. All rights reserved.
 	</p>
 </motion.div>
 

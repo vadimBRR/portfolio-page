@@ -14,6 +14,7 @@ import {
 	Facebook,
 } from 'lucide-react'
 import {} from 'lucide-react'
+import { SiTelegram, SiThreads, SiX } from 'react-icons/si'
 
 export const navLinks = [
 	{ id: 0, name: 'Home', icon: Home },
@@ -158,7 +159,7 @@ export const projects = [
 
 export const contact_links = [
 	{
-		label: 'Email me',
+		label: 'vadmabos.programming@gmail.com',
 		icon: Mail,
 		href: 'mailto:vadmabos.programming@gmail.com',
 		color: 'text-primary',
@@ -190,8 +191,20 @@ export const contact_links = [
 	},
 	{
 		label: '@vadimbrovich_',
-		iconName: '𝕏',
+    icon:SiX,
 		href: 'https://x.com/vadimbrovich_',
+		color: 'text-white',
+	},
+  {
+		label: '@vadimbrovich',
+		icon: SiTelegram,
+		href: 'https://t.me/vadimbrovich',
+		color: 'text-sky-400',
+	},
+	{
+		label: '@naymmess',
+		icon: SiThreads,
+		href: 'https://www.threads.net/@naymmess',
 		color: 'text-white',
 	},
 ]
