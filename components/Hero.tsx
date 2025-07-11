@@ -91,7 +91,7 @@ const Hero = () => {
 						transition={{ duration: 0.4, delay: 0.7 }}
 					>
 						<motion.a
-							href='/Vadym_Brovych_CV.pdf'
+							href='/CV_Vadym_Brovych.pdf'
 							download
 							className='border border-primary text-primary hover:text-white hover:border-white transition-colors px-6 py-3 rounded-full text-center'
 							whileHover={{ scale: 1.05 }}
